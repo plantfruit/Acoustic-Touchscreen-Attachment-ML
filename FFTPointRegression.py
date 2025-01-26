@@ -67,20 +67,13 @@ test_indices = np.array(test_indices)
 # Split the dataset
 X_train, X_test = X[train_indices], X[test_indices]
 y_train, y_test = y[train_indices], y[test_indices]
-print(np.shape(X_train))
-print(np.shape(X_test))
-print(np.shape(y_train))
-print(np.shape(y_test))
-
 
 # Linear regression 
 model = LinearRegression()
 model.fit(X_train, y_train)  # Train the model
 y_pred = model.predict(X_test)  # Predict
-print(y_pred)
+print(y_pred.tolist())
 print(np.shape(y_pred))
-print(y_test)
-print(np.shape(y_test))
 
 # Evaluate 
 mse = mean_squared_error(y_test, y_pred)
@@ -88,4 +81,17 @@ r2 = r2_score(y_test, y_pred)
 print("MSE:", mse)
 print("R^2:", r2)
 
+# Save regression results to an Excel file
+import xlsxwriter
 
+# Create a workbook and add a worksheet
+workbook = xlsxwriter.Workbook("RegressionResults.xlsx")
+worksheet = workbook.add_worksheet()
+
+# Write data into columns (no headers)
+for row, (value1, value2) in enumerate(zip(y_test, y_pred)):
+    worksheet.write(row, 0, value1)  # Write into column A (index 0)
+    worksheet.write(row, 1, value2)  # Write into column B (index 1)
+
+# Close the workbook
+workbook.close()
