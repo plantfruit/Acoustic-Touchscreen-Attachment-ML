@@ -11,10 +11,13 @@ from decimal import Decimal as D
 regX1_cols1to94 = 'Data/5x5_1_regX_1_cols1to94.txt'
 regX1_cols1to94_labels = 'Data/5x5_1_regX_1_cols1to94_labels.txt'
 regX1_10points_0_3mm = 'Data/regression_10point_0_3res.txt'
-
+regY1_2_cols8to30 = 'Data/5x5_1_regY_2_cols8to30.txt'
+regY1_3_cols1to46 = 'Data/5x5_1_regY_3_cols1to46.txt'
+regY1_3_cols137to140 = 'Data/5x5_1_regY_3_cols137to140.txt'
+regY1_3_cols1to45_137to140 = 'Data/5x5_1_regY_3_cols1to46_cols137to140.txt'
 
 # Select filename
-featureFile = regX1_cols1to94
+featureFile = regY1_3_cols1to45_137to140
 labelFile = regX1_10points_0_3mm
 
 X = np.loadtxt(featureFile)
@@ -34,7 +37,7 @@ test_indices = []
 for label in range(1, num_labels + 1):
     # Get all rows for this label
     label_rows = np.where(y == round(label * 0.3, 1))[0]
-    print(D(label * 0.3))
+    print(round(label * 0.3))
 
     # Split the indices: first 80 for training, last 20 for testing
     train_indices.extend(label_rows[:80])
