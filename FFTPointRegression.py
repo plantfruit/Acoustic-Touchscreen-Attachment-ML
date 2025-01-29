@@ -24,10 +24,17 @@ regY1_3_cols1to45_137to140 = 'Data/5x5_1_regY_3_cols1to46_cols137to140.txt'
 regY1_1 = 'Data/5x5_regY_1.txt'
 regY1_2 = 'Data/5x5_regY_2.txt'
 regY1_3 = 'Data/5x5_regY_3.txt'
+# New balloon, hard force (full FFT spectrum)
+regX2_1 = 'Data/5x5_2_regX_1.txt'
+regX2_2 = 'Data/5x5_2_regX_2.txt'
+regX2_3 = 'Data/5x5_2_regX_3.txt'
+regY2_1 = 'Data/5x5_2_regY_1.txt'
+regY2_2 = 'Data/5x5_2_regY_2.txt'
+regY2_3 = 'Data/5x5_2_regY_3.txt'
 
 
 # Select filename
-featureFile = regY1_3
+featureFile = regY2_3
 labelFile = regX1_10points_0_3mm
 
 X = np.loadtxt(featureFile)
