@@ -10,14 +10,24 @@ from decimal import Decimal as D
 # FILENAMES
 regX1_cols1to94 = 'Data/5x5_1_regX_1_cols1to94.txt'
 regX1_cols1to94_labels = 'Data/5x5_1_regX_1_cols1to94_labels.txt'
-regX1_10points_0_3mm = 'Data/regression_10point_0_3res.txt'
+regX1_10points_0_3mm = 'Data/regression_10point_0_3res.txt' # Label file
+# Full FFT spectrums (not selected columns)
+regX1_1 = 'Data/5x5_regX_1.txt'
+regX1_2 = 'Data/5x5_regX_2.txt'
+regX1_3 = 'Data/5x5_regX_3.txt'
+# Selected areas from FFT
 regY1_2_cols8to30 = 'Data/5x5_1_regY_2_cols8to30.txt'
 regY1_3_cols1to46 = 'Data/5x5_1_regY_3_cols1to46.txt'
 regY1_3_cols137to140 = 'Data/5x5_1_regY_3_cols137to140.txt'
 regY1_3_cols1to45_137to140 = 'Data/5x5_1_regY_3_cols1to46_cols137to140.txt'
+# Full FFT spectrum
+regY1_1 = 'Data/5x5_regY_1.txt'
+regY1_2 = 'Data/5x5_regY_2.txt'
+regY1_3 = 'Data/5x5_regY_3.txt'
+
 
 # Select filename
-featureFile = regY1_3_cols1to45_137to140
+featureFile = regY1_3
 labelFile = regX1_10points_0_3mm
 
 X = np.loadtxt(featureFile)
@@ -65,8 +75,8 @@ for label in range(1, num_labels + 1):
 # Convert to arrays for indexing
 train_indices = np.array(train_indices)
 test_indices = np.array(test_indices)
-print(train_indices)
-print(test_indices)
+#print(train_indices)
+#print(test_indices)
 
 # Split the dataset
 X_train, X_test = X[train_indices], X[test_indices]
