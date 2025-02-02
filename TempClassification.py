@@ -32,16 +32,17 @@ regY2_1 = 'Data/5x5_2_regY_1.txt'
 regY2_2 = 'Data/5x5_2_regY_2.txt'
 regY2_3 = 'Data/5x5_2_regY_3.txt'
 
+BGsilent = 'Data/BGsilent.txt'
 BGwhite_vol1 = 'Data/BGwhite_vol1.txt'
 BGwhite_vol2 = 'Data/BGwhite_vol2.txt'
 BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # Select filename
-featureFile = BGwhite_vol3
+featureFile = BGsilent
 labelFile = grid3x3_labels
 
-featureTest = BGwhite_vol2
+featureTest = BGwhite_vol3
 labelTest = grid3x3_labels
 
 X = np.loadtxt(featureFile)
@@ -52,7 +53,7 @@ y_test = np.loadtxt(labelTest)
 # Perform test-train split
 
 # Dataset Parameters
-internalSplit = True
+internalSplit = False
 num_labels = 9
 files_per_label = 10
 rows_per_file = 10 
