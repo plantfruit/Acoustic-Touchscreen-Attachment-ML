@@ -52,7 +52,7 @@ y_test = np.loadtxt(labelTest)
 # Perform test-train split
 
 # Dataset Parameters
-internalSplit = False
+internalSplit = True
 num_labels = 9
 files_per_label = 10
 rows_per_file = 10 
@@ -72,8 +72,8 @@ for label in range(1, num_labels + 1):
     test_indices.extend(label_rows[10:])
 
     # Reversed order
-    #train_indices.extend(label_rows[100:])
-    #test_indices.extend(label_rows[:100])
+    #train_indices.extend(label_rows[90:])
+    #test_indices.extend(label_rows[:90])
     
     # Split the indices: 
     # First 20 rows and last 60 rows for training
