@@ -39,10 +39,10 @@ BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # Select filename
-featureFile = BGsilent
+featureFile = BGwhite_vol3
 labelFile = grid3x3_labels
 
-featureTest = BGwhite_vol3
+featureTest = BGsilent
 labelTest = grid3x3_labels
 
 X = np.loadtxt(featureFile)
