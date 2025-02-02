@@ -4,7 +4,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import root_mean_squared_error, mean_squared_error, r2_score
 from decimal import Decimal as D
 
 # FILENAMES
@@ -32,6 +32,10 @@ regY2_1 = 'Data/5x5_2_regY_1.txt'
 regY2_2 = 'Data/5x5_2_regY_2.txt'
 regY2_3 = 'Data/5x5_2_regY_3.txt'
 
+regY2_3_col88 = 'Data/5x5_2_regX_3_col88.txt'
+regX1_1_cols57to75 = 'Data/5x5_2_regX_1_cols57to75.txt'
+regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
+
 
 # Select filename
 featureFile = regY2_3
@@ -39,6 +43,9 @@ labelFile = regX1_10points_0_3mm
 
 X = np.loadtxt(featureFile)
 y = np.loadtxt(labelFile)
+
+if X.ndim == 1:
+    X = X.reshape(-1, 1)
 
 # Perform test-train split
 
@@ -58,7 +65,7 @@ for label in range(1, num_labels + 1):
 
     # Split the indices: first 80 for training, last 20 for testing
     train_indices.extend(label_rows[:80])
-    test_indices.extend(label_rows[80:])
+    test_indices.extend(label_rows[20:])
 
     # Reversed order
     #train_indices.extend(label_rows[100:])
@@ -98,8 +105,10 @@ print(np.shape(y_pred))
 
 # Evaluate 
 mse = mean_squared_error(y_test, y_pred)
+rmse = root_mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 print("MSE:", mse)
+print("RMSE:", rmse)
 print("R^2:", r2)
 
 # Save regression results to an Excel file
