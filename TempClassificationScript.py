@@ -41,12 +41,18 @@ grid3x3_labels  = 'Data/3x3_labels.txt'
 featureFile = BGwhite_vol3
 labelFile = grid3x3_labels
 
+featureTest = BGwhite_vol2
+labelTest = grid3x3_labels
+
 X = np.loadtxt(featureFile)
 y = np.loadtxt(labelFile)
+X_test = np.loadtxt(featureTest)
+y_test = np.loadtxt(labelTest)
 
 # Perform test-train split
 
 # Dataset Parameters
+internalSplit = False
 num_labels = 9
 files_per_label = 10
 rows_per_file = 10 
@@ -62,8 +68,8 @@ for label in range(1, num_labels + 1):
     #print(round(label * 0.3))
 
     # Split the indices: first 80 for training, last 20 for testing
-    train_indices.extend(label_rows[:50])
-    test_indices.extend(label_rows[50:])
+    train_indices.extend(label_rows[:10])
+    test_indices.extend(label_rows[10:])
 
     # Reversed order
     #train_indices.extend(label_rows[100:])
@@ -91,8 +97,12 @@ test_indices = np.array(test_indices)
 #print(test_indices)
 
 # Split the dataset
-X_train, X_test = X[train_indices], X[test_indices]
-y_train, y_test = y[train_indices], y[test_indices]
+if (internalSplit == True):
+    X_train, X_test = X[train_indices], X[test_indices]
+    y_train, y_test = y[train_indices], y[test_indices]
+else:
+    X_train = X
+    y_train = y
 
 # Linear regression 
 model = SVC(kernel='linear')
