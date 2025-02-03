@@ -31,16 +31,19 @@ regX2_3 = 'Data/5x5_2_regX_3.txt'
 regY2_1 = 'Data/5x5_2_regY_1.txt'
 regY2_2 = 'Data/5x5_2_regY_2.txt'
 regY2_3 = 'Data/5x5_2_regY_3.txt'
-
+# 3x3 grid, background noise (white noise) playing
 BGsilent = 'Data/BGsilent.txt'
 BGwhite_vol1 = 'Data/BGwhite_vol1.txt'
 BGwhite_vol2 = 'Data/BGwhite_vol2.txt'
 BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
+miscobj3 = 'Data/miscobj3.txt'
+miscobj3_labels = 'Data/miscobj3_labels.txt'
+
 # Select filename
-featureFile = BGwhite_vol3
-labelFile = grid3x3_labels
+featureFile = miscobj3
+labelFile = miscobj3_labels
 
 featureTest = BGsilent
 labelTest = grid3x3_labels
@@ -53,8 +56,8 @@ y_test = np.loadtxt(labelTest)
 # Perform test-train split
 
 # Dataset Parameters
-internalSplit = False
-num_labels = 9
+internalSplit = True
+num_labels = 6
 files_per_label = 10
 rows_per_file = 10 
 
@@ -68,9 +71,21 @@ for label in range(1, num_labels + 1):
     #label_rows = np.where(y == round(label * 0.3, 1))[0]
     #print(round(label * 0.3))
 
+    # Shuffle the rows
+    np.random.seed(30)
+    
+    # Reshape the array into 10 groups of 10 values
+    groups = label_rows.reshape(10, 10)  # Shape: (10, 10)
+
+    # Shuffle the groups along the first axis
+    np.random.shuffle(groups)
+
+    # Flatten the shuffled groups back into a 1D array
+    shuffled_data = groups.flatten()
+
     # Split the indices: first 80 for training, last 20 for testing
-    train_indices.extend(label_rows[:10])
-    test_indices.extend(label_rows[10:])
+    train_indices.extend(shuffled_data[:50])
+    test_indices.extend(shuffled_data[50:])
 
     # Reversed order
     #train_indices.extend(label_rows[90:])
