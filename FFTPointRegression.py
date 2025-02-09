@@ -36,10 +36,13 @@ regY2_3_col88 = 'Data/5x5_2_regX_3_col88.txt'
 regX1_1_cols57to75 = 'Data/5x5_2_regX_1_cols57to75.txt'
 regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
 
+tube1D_res05 = 'Data/1Dtube_05res.txt'
+tube1D_res05_labels = 'Data/1Dtube_05res_labels.txt'
+
 
 # Select filename
-featureFile = regY2_3
-labelFile = regX1_10points_0_3mm
+featureFile = tube1D_res05
+labelFile = tube1D_res05_labels
 
 X = np.loadtxt(featureFile)
 y = np.loadtxt(labelFile)
@@ -60,12 +63,14 @@ test_indices = []
 
 for label in range(1, num_labels + 1):
     # Get all rows for this label
-    label_rows = np.where(y == round(label * 0.3, 1))[0]
+    label_rows = np.where(y == round(label * 0.5 + 0.5, 1))[0]
+    #label_rows = np.where(y == round(label, 1))[0]
+    #label_rows = np.where(y == round(label * 0.3, 1))[0]
     print(round(label * 0.3))
 
     # Split the indices: first 80 for training, last 20 for testing
-    train_indices.extend(label_rows[:80])
-    test_indices.extend(label_rows[20:])
+    train_indices.extend(label_rows[:50])
+    test_indices.extend(label_rows[50:])
 
     # Reversed order
     #train_indices.extend(label_rows[100:])
