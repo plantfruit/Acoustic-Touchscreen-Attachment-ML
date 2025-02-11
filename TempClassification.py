@@ -41,9 +41,13 @@ grid3x3_labels  = 'Data/3x3_labels.txt'
 miscobj3 = 'Data/miscobj3.txt'
 miscobj3_labels = 'Data/miscobj3_labels.txt'
 
+# 1D tube, press 6 different objects in the center
+tube1D_6obj = 'Data/1Dtube_6obj.txt'
+tube1D_6obj_labels = 'Data/1Dtube_6obj_labels.txt'
+
 # Select filename
-featureFile = miscobj3
-labelFile = miscobj3_labels
+featureFile = tube1D_6obj
+labelFile = tube1D_6obj_labels
 
 featureTest = BGsilent
 labelTest = grid3x3_labels
@@ -72,7 +76,7 @@ for label in range(1, num_labels + 1):
     #print(round(label * 0.3))
 
     # Shuffle the rows
-    np.random.seed(30)
+    np.random.seed(19)
     
     # Reshape the array into 10 groups of 10 values
     groups = label_rows.reshape(10, 10)  # Shape: (10, 10)

@@ -41,9 +41,12 @@ grid3x3_labels  = 'Data/3x3_labels.txt'
 miscobj3 = 'Data/miscobj3.txt'
 miscobj3_labels = 'Data/miscobj3_labels.txt'
 
+tube1D_6obj = 'Data/1Dtube_6obj.txt'
+tube1D_6obj_labels = 'Data/1Dtube_6obj_labels.txt'
+
 # Select filename
-featureFile = miscobj3
-labelFile = miscobj3_labels
+featureFile = tube1D_6obj
+labelFile = tube1D_6obj_labels
 
 featureTest = BGsilent
 labelTest = grid3x3_labels
@@ -78,7 +81,7 @@ for randSeed in range(1, 101):
         np.random.seed(randSeed)
         
         # Reshape the array into 10 groups of 10 values
-        groups = label_rows.reshape(10, 10)  # Shape: (10, 10)
+        groups = label_rows.reshape(files_per_label, rows_per_file)  # Shape: (10, 10)
 
         # Shuffle the groups along the first axis
         np.random.shuffle(groups)
@@ -87,8 +90,8 @@ for randSeed in range(1, 101):
         shuffled_data = groups.flatten()
 
         # Split the indices: first 80 for training, last 20 for testing
-        train_indices.extend(shuffled_data[:50])
-        test_indices.extend(shuffled_data[50:])
+        train_indices.extend(shuffled_data[:80])
+        test_indices.extend(shuffled_data[80:])
 
         # Reversed order
         #train_indices.extend(label_rows[90:])
