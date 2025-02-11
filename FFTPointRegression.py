@@ -68,9 +68,18 @@ for label in range(1, num_labels + 1):
     #label_rows = np.where(y == round(label * 0.3, 1))[0]
     print(round(label * 0.3))
 
+    # Shuffle the rows
+    np.random.seed(3)    
+    # Reshape the array into 10 groups of 10 values
+    groups = label_rows.reshape(10, 10)  # Shape: (10, 10)
+    # Shuffle the groups along the first axis
+    np.random.shuffle(groups)
+    # Flatten the shuffled groups back into a 1D array
+    shuffled_data = groups.flatten()
+    
     # Split the indices: first 80 for training, last 20 for testing
-    train_indices.extend(label_rows[:50])
-    test_indices.extend(label_rows[50:])
+    train_indices.extend(label_rows[:80])
+    test_indices.extend(label_rows[80:])
 
     # Reversed order
     #train_indices.extend(label_rows[100:])
