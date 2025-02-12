@@ -64,7 +64,7 @@ regX1_1_cols57to75 = 'Data/5x5_2_regX_1_cols57to75.txt'
 regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = trimic1_1and2
+fileName = trimic1_3
 
 labelFileName = trimic1relabels
 
@@ -166,7 +166,7 @@ model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
 
 if (kFoldOrNot):
     # Perform cross-validation and get predictions for each sample
-    y_pred = cross_val_predict(model, X_reshaped, y, cv=5)
+    y_pred = cross_val_predict(model, X_reshaped, y, cv=kFoldNum)
 
     # Print predictions and true labels for each sample
     #for i in range(len(y_pred)):
@@ -174,7 +174,7 @@ if (kFoldOrNot):
 
     # Perform 5-fold cross-validation
     accuracy = accuracy_score(y, y_pred)
-    cv_scores = cross_val_score(model, X_reshaped, y, cv=5)
+    cv_scores = cross_val_score(model, X_reshaped, y, cv=kFoldNum)
     print(cv_scores)
     print(np.mean(cv_scores))
 else:     
