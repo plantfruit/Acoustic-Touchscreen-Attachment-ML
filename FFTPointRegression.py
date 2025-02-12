@@ -53,10 +53,13 @@ if X.ndim == 1:
 # Perform test-train split
 
 # Dataset Parameters
-num_labels = 10
+num_labels = 17
 files_per_label = 10
 rows_per_file = 10 
 
+
+
+#for seed in range(1, 101):
 # Train-test split: First 80 rows/train, last 20 rows/test per label
 train_indices = []
 test_indices = []
@@ -66,10 +69,11 @@ for label in range(1, num_labels + 1):
     label_rows = np.where(y == round(label * 0.5 + 0.5, 1))[0]
     #label_rows = np.where(y == round(label, 1))[0]
     #label_rows = np.where(y == round(label * 0.3, 1))[0]
-    print(round(label * 0.3))
+    #print(round(label * 0.3))
 
     # Shuffle the rows
-    np.random.seed(3)    
+    seed = 75
+    np.random.seed(seed)    
     # Reshape the array into 10 groups of 10 values
     groups = label_rows.reshape(10, 10)  # Shape: (10, 10)
     # Shuffle the groups along the first axis
@@ -78,8 +82,8 @@ for label in range(1, num_labels + 1):
     shuffled_data = groups.flatten()
     
     # Split the indices: first 80 for training, last 20 for testing
-    train_indices.extend(label_rows[:80])
-    test_indices.extend(label_rows[80:])
+    train_indices.extend(shuffled_data[:80])
+    test_indices.extend(shuffled_data[80:])
 
     # Reversed order
     #train_indices.extend(label_rows[100:])
@@ -114,8 +118,8 @@ y_train, y_test = y[train_indices], y[test_indices]
 model = LinearRegression()
 model.fit(X_train, y_train)  # Train the model
 y_pred = model.predict(X_test)  # Predict
-print(y_pred)
-print(np.shape(y_pred))
+#print(y_pred)
+#print(np.shape(y_pred))
 
 # Evaluate 
 mse = mean_squared_error(y_test, y_pred)
@@ -124,6 +128,8 @@ r2 = r2_score(y_test, y_pred)
 print("MSE:", mse)
 print("RMSE:", rmse)
 print("R^2:", r2)
+#print("seed:", seed)
+
 
 # Save regression results to an Excel file
 import xlsxwriter

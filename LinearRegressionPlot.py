@@ -3,43 +3,64 @@ import matplotlib.pyplot as plt
 from scipy.stats import linregress
 
 # Filenames
-D1_05res = 'Final Data/
+D1_05res = 'Final Data/1D_reg.txt'
 
-# Load data from the text file (tab-separated)
-file_path = 
-data = np.loadtxt(file_path, delimiter="\t")
+# Parameters
+file_path = D1_05res
+R2 = 0.932
+RMSE =  0.639
+
+data = np.loadtxt(file_path) #, delimiter="\t")
 
 # Extract x and y columns
 x = data[:, 0]
 y = data[:, 1]
 
-# Perform linear regression
-slope, intercept, r_value, _, _ = linregress(x, y)
-trendline = slope * x + intercept  # Compute trendline
+# Group every 20 rows and calculate the mean and standard deviation
+group_size = 20
+num_groups = len(y) // group_size
 
-# Define error bars (Example: random small errors, replace with actual errors if available)
-error_y = np.random.uniform(0.5, 1.5, size=len(y))
+x_means = []
+y_means = []
+y_stds = []
 
-# Manually enter R² and RMSE (you will need to calculate these separately)
-manual_r2 = 0.95  # Example R² value
-manual_rmse = 2.3  # Example RMSE value
+for i in range(num_groups):
+    x_group = x[i * group_size:(i + 1) * group_size]
+    y_group = y[i * group_size:(i + 1) * group_size]
+    
+    x_means.append(np.mean(x_group))
+    y_means.append(np.mean(y_group))
+    y_stds.append(np.std(y_group))
+
+x_means = np.array(x_means)
+y_means = np.array(y_means)
+y_stds = np.array(y_stds)
+
+print(x_means)
+print(y_means)
+print(y_stds)
+
+# Manually enter R² and RMSE 
+manual_r2 = R2  
+manual_rmse = RMSE  
+
+# Perform linear regression to get trendline
+slope, intercept, r_value, _, _ = linregress(x_means, y_means)
+trendline = slope * x_means + intercept  # Compute trendline
 
 # Create scatter plot
 plt.figure(figsize=(8, 6))
-plt.scatter(x, y, color='blue', label="Data Points")  # Scatter plot
-plt.plot(x, trendline, color='red', label="Trendline")  # Trendline
-plt.errorbar(x, y, yerr=error_y, fmt='o', color='blue', alpha=0.7, capsize=5
+plt.scatter(x_means, y_means, color='blue')  # Scatter plot
+plt.plot(x_means, trendline, color='red')  # Trendline
+plt.errorbar(x_means, y_means, yerr= y_stds, fmt='o', color='blue', alpha=0.7, capsize=5)
 
 # Add titles and labels
-plt.xlabel("X-axis Label")
-plt.ylabel("Y-axis Label")
-plt.title("Scatter Plot with Trendline and Error Bars")
-plt.legend()
+plt.xlabel("Actual Distance (cm)")
+plt.ylabel("Predicted Distance (cm)")
 
 # Add manually entered R² and RMSE values as text
 text_str = f"R² = {manual_r2}\nRMSE = {manual_rmse}"
-plt.text(min(x), max(y), text_str, fontsize=12, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
-
+textBox = plt.text(7.3, 1, text_str, fontsize=12, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
 # Show the plot
 plt.show()
 
