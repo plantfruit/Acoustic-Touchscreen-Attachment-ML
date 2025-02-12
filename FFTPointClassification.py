@@ -79,7 +79,7 @@ else:
     X_reshaped = X
 
 # Dataset Parameters
-num_labels = 10
+num_labels = 25
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -153,12 +153,12 @@ X_train, X_test = X_reshaped[train_indices], X_reshaped[test_indices]
 y_train, y_test = y[train_indices], y[test_indices]
 
 # Train the SVM model
-model = XGBClassifier()
+#model = XGBClassifier()
 #model = GaussianNB()
-#model = KNeighborsClassifier(n_neighbors=10)
+#model = KNeighborsClassifier(n_neighbors=5)
 #model = DecisionTreeClassifier()
 #model = RandomForestClassifier(n_estimators=100)
-#model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
+model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
 model.fit(X_train, y_train)
 
 # Make predictions on the test set
