@@ -64,7 +64,7 @@ regX1_1_cols57to75 = 'Data/5x5_2_regX_1_cols57to75.txt'
 regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = trimic1re
+fileName = trimic1_1and2
 
 labelFileName = trimic1relabels
 
