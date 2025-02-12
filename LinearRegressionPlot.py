@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 from scipy.stats import linregress
 
 # Filenames
+D1_05res = 'Final Data/
 
 # Load data from the text file (tab-separated)
-file_path = "data.txt"  # Change this to your actual file path
+file_path = 
 data = np.loadtxt(file_path, delimiter="\t")
 
 # Extract x and y columns
