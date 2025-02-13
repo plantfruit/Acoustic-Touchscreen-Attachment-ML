@@ -39,10 +39,9 @@ regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
 tube1D_res05 = 'Data/1Dtube_05res.txt'
 tube1D_res05_labels = 'Data/1Dtube_05res_labels.txt'
 
-
 # Select filename
-featureFile = tube1D_res05
-labelFile = tube1D_res05_labels
+featureFile = regX1_3
+labelFile = regX1_10points_0_3mm
 
 X = np.loadtxt(featureFile)
 y = np.loadtxt(labelFile)
@@ -53,11 +52,9 @@ if X.ndim == 1:
 # Perform test-train split
 
 # Dataset Parameters
-num_labels = 17
+num_labels = 10
 files_per_label = 10
 rows_per_file = 10 
-
-
 
 #for seed in range(1, 101):
 # Train-test split: First 80 rows/train, last 20 rows/test per label
@@ -66,24 +63,24 @@ test_indices = []
 
 for label in range(1, num_labels + 1):
     # Get all rows for this label
-    label_rows = np.where(y == round(label * 0.5 + 0.5, 1))[0]
+    label_rows = np.where(y == round(label * 0.3, 1))[0]
     #label_rows = np.where(y == round(label, 1))[0]
     #label_rows = np.where(y == round(label * 0.3, 1))[0]
     #print(round(label * 0.3))
 
     # Shuffle the rows
-    seed = 75
-    np.random.seed(seed)    
+    #seed = 75
+    #np.random.seed(seed)    
     # Reshape the array into 10 groups of 10 values
-    groups = label_rows.reshape(10, 10)  # Shape: (10, 10)
+    #groups = label_rows.reshape(10, 10)  # Shape: (10, 10)
     # Shuffle the groups along the first axis
-    np.random.shuffle(groups)
+    #np.random.shuffle(groups)
     # Flatten the shuffled groups back into a 1D array
-    shuffled_data = groups.flatten()
+    #shuffled_data = groups.flatten()
     
     # Split the indices: first 80 for training, last 20 for testing
-    train_indices.extend(shuffled_data[:80])
-    test_indices.extend(shuffled_data[80:])
+    train_indices.extend(label_rows[:80])
+    test_indices.extend(label_rows[80:])
 
     # Reversed order
     #train_indices.extend(label_rows[100:])

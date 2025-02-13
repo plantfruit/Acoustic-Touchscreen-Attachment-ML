@@ -63,13 +63,17 @@ reg_10points_integer = 'Data/regression_10point_integer.txt'
 regX1_1_cols57to75 = 'Data/5x5_2_regX_1_cols57to75.txt'
 regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
 
-# SELECT FILENAMES FOR ANALYSIS
-fileName = trimic1_3
+# 1D rubber tube, at 0.5 cm intervals
+tube1D_res05 = 'Data/1Dtube_05res.txt'
+tube1D_res05_labels = 'Data/1Dtube_05res_labels.txt'
 
-labelFileName = trimic1relabels
+# SELECT FILENAMES FOR ANALYSIS
+fileName = tube1D_res05
+
+labelFileName = tube1D_res05_labels
 
 # PARAMETERS
-num_labels = 25
+num_labels = 17
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -158,13 +162,15 @@ if (not(kFoldOrNot)):
 
 # Train the SVM model
 #model = XGBClassifier()
-#model = GaussianNB()
+model = GaussianNB()
 #model = KNeighborsClassifier(n_neighbors=5)
 #model = DecisionTreeClassifier()
 #model = RandomForestClassifier(n_estimators=100)
-model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
+#model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
 
 if (kFoldOrNot):
+    #y = y * 2 - 1
+    
     # Perform cross-validation and get predictions for each sample
     y_pred = cross_val_predict(model, X_reshaped, y, cv=kFoldNum)
 

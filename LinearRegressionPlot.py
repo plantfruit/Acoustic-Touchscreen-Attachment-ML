@@ -4,12 +4,17 @@ from scipy.stats import linregress
 
 # Filenames
 D1_05res = 'Final Data/1D_reg.txt'
+D2_regX_1 = 'Final Data/2D_regX_1.txt'
+D2_regX_2 = 'Final Data/2D_regX_2.txt'
+D2_regX_3 = 'Final Data/2D_regX_3.txt'
+D2_regY_1 = 'Final Data/2D_regY_1.txt'
+D2_regY_2 = 'Final Data/2D_regY_2.txt'
+D2_regY_3 = 'Final Data/2D_regY_3.txt'
 
 # Parameters
-file_path = D1_05res
-R2 = 0.932
-RMSE =  0.639
-
+file_path = D2_regY_1
+R2 = 0.976
+RMSE =  0.134
 data = np.loadtxt(file_path) #, delimiter="\t")
 
 # Extract x and y columns
@@ -53,6 +58,7 @@ plt.figure(figsize=(8, 6))
 plt.scatter(x_means, y_means, color='blue')  # Scatter plot
 plt.plot(x_means, trendline, color='red')  # Trendline
 plt.errorbar(x_means, y_means, yerr= y_stds, fmt='o', color='blue', alpha=0.7, capsize=5)
+plt.ylim(0, y_means[len(y_means) - 1] + y_means[0])
 
 # Add titles and labels
 plt.xlabel("Actual Distance (cm)")
@@ -60,7 +66,7 @@ plt.ylabel("Predicted Distance (cm)")
 
 # Add manually entered R² and RMSE values as text
 text_str = f"R² = {manual_r2}\nRMSE = {manual_rmse}"
-textBox = plt.text(7.3, 1, text_str, fontsize=12, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
+textBox = plt.text(2.4, 0.6, text_str, fontsize=12, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
 # Show the plot
 plt.show()
 
