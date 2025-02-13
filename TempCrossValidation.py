@@ -40,18 +40,23 @@ BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # Select filename
-featureFile = BGwhite_vol3
+featureFile = [BGwhite_vol1, BGwhite_vol3]
 labelFile = grid3x3_labels
 
 featureTest = BGwhite_vol2
 labelTest = grid3x3_labels
 
-X = np.loadtxt(featureFile)
+#X = np.loadtxt(featureFile)
 y = np.loadtxt(labelFile)
 X_test = np.loadtxt(featureTest)
 y_test = np.loadtxt(labelTest)
-X_train = X
-y_train = y
+
+if (len(featureFile) > 1):
+    X_train = np.vstack((np.loadtxt(featureFile[0]), np.loadtxt(featureFile[1])))
+    y_train = np.concatenate((y, y))
+else:
+    X_train = np.loadtxt(featureFile)
+    y_train = y
 
 # Dataset Parameters
 internalSplit = True
@@ -62,7 +67,8 @@ rows_per_file = 10
 # Classification begins here
 model = SVC(kernel='linear')
 model.fit(X_train, y_train)
-y_pred = cross_val_predict(model, X, y, cv = 10)  # Predict
+y_pred = model.predict(X_test)
+#y_pred = cross_val_predict(model, X, y, cv = 10)  # Predict
 print(y_pred)
 print(np.shape(y_pred))
 
@@ -71,8 +77,8 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Test accuracy: {accuracy * 100:.2f}%")
 
 # Print the accuracy for each fold
-cv_scores = cross_val_score(model, X, y, cv = 10)
-print(f"Accuracy for each fold: {cv_scores}")
+#cv_scores = cross_val_score(model, X, y, cv = 10)
+#print(f"Accuracy for each fold: {cv_scores}")
 
 # Generate the confusion matrix with fixed size
 all_labels = np.arange(1, num_labels + 1)  # All possible labels from 1 to 25

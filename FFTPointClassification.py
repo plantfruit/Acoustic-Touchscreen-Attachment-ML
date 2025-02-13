@@ -46,6 +46,13 @@ groupingTestLabels = 'Data/groupsorttest_labels.txt'
 g3x3_trimic1 = 'Data/3x3_trimic1.txt' # 15 files per label, groups of 5 trials that are "soft, "medium," and "hard" press
 g3x3_trimic1_labels = 'Data/3x3_trimic1_labels.txt'
 
+# 3x3 grid, background noise (white noise) playing
+BGsilent = 'Data/BGsilent.txt'
+BGwhite_vol1 = 'Data/BGwhite_vol1.txt'
+BGwhite_vol2 = 'Data/BGwhite_vol2.txt'
+BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
+grid3x3_labels  = 'Data/3x3_labels.txt'
+
 # Regression trials (straight lines)
 # Full FFT spectrum
 regY1_1 = 'Data/5x5_regY_1.txt'
@@ -68,12 +75,12 @@ tube1D_res05 = 'Data/1Dtube_05res.txt'
 tube1D_res05_labels = 'Data/1Dtube_05res_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = tube1D_res05
+fileName = BGwhite_vol3
 
-labelFileName = tube1D_res05_labels
+labelFileName = grid3x3_labels
 
 # PARAMETERS
-num_labels = 17
+num_labels = 9
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -162,11 +169,11 @@ if (not(kFoldOrNot)):
 
 # Train the SVM model
 #model = XGBClassifier()
-model = GaussianNB()
+#model = GaussianNB()
 #model = KNeighborsClassifier(n_neighbors=5)
 #model = DecisionTreeClassifier()
 #model = RandomForestClassifier(n_estimators=100)
-#model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
+model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
 
 if (kFoldOrNot):
     #y = y * 2 - 1
