@@ -7,16 +7,20 @@ D2_pressedTime = ['Final Data/2D_time1.txt', 'Final Data/2D_time2.txt', 'Final D
 D2_unpressedTime = ['Final Data/2D_time1U.txt', 'Final Data/2D_time2U.txt', 'Final Data/2D_time3U.txt']
 D2_pressedFFT = ['Final Data/2D_fft1P.txt', 'Final Data/2D_fft2P.txt', 'Final Data/2D_fft3P.txt']
 D2_unpressedFFT = ['Final Data/2D_fft1U.txt', 'Final Data/2D_fft2U.txt', 'Final Data/2D_fft3U.txt']
+D1_pressedTime = ['Final Data/1D_timeP.txt']
+D1_unpressedTime = ['Final Data/1D_timeU.txt']
+D1_pressedFFT = ['Final Data/1D_fftP.txt']
+D1_unpressedFFT = ['Final Data/1D_fftU.txt']
 
 # Parameters
-pressData = D2_pressedFFT
-unpressData = D2_unpressedFFT
+pressData = D1_pressedFFT
+unpressData = D1_unpressedFFT
 legends = ["Pressed", "Unpressed"] # List to hold custom legends
-ylim = [50, 120] #[-12e3, 8e3]
-xName = 'Frequency (kHz)'
-yName = 'Magnitude (dB)'
+ylim = [30, 120] #[50, 120] #[-12e3, 8e3]
+xName = 'Frequency (kHz)' #'Frequency (kHz)'
+yName = 'Magnitude (dB)' #'Magnitude (dB)'
 freqWindow = [5, 21]
-fftOrTime = True
+fftOrTime = True  # True - FFT, False - Time domain
 
 
 # Sampling frequency

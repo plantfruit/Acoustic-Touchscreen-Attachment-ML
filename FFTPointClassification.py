@@ -46,13 +46,6 @@ groupingTestLabels = 'Data/groupsorttest_labels.txt'
 g3x3_trimic1 = 'Data/3x3_trimic1.txt' # 15 files per label, groups of 5 trials that are "soft, "medium," and "hard" press
 g3x3_trimic1_labels = 'Data/3x3_trimic1_labels.txt'
 
-# 3x3 grid, background noise (white noise) playing
-BGsilent = 'Data/BGsilent.txt'
-BGwhite_vol1 = 'Data/BGwhite_vol1.txt'
-BGwhite_vol2 = 'Data/BGwhite_vol2.txt'
-BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
-grid3x3_labels  = 'Data/3x3_labels.txt'
-
 # Regression trials (straight lines)
 # Full FFT spectrum
 regY1_1 = 'Data/5x5_regY_1.txt'
@@ -70,17 +63,17 @@ reg_10points_integer = 'Data/regression_10point_integer.txt'
 regX1_1_cols57to75 = 'Data/5x5_2_regX_1_cols57to75.txt'
 regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
 
-# 1D rubber tube, at 0.5 cm intervals
-tube1D_res05 = 'Data/1Dtube_05res.txt'
-tube1D_res05_labels = 'Data/1Dtube_05res_labels.txt'
+# 1D tube, gripper arm, 6 objects
+D1_6obj2 = 'Final Data/1D_6obj2.txt'
+D1_6obj2_labels = 'Final Data/1Dtube_6obj2_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = BGwhite_vol3
+fileName = D1_6obj2
 
-labelFileName = grid3x3_labels
+labelFileName = D1_6obj2_labels
 
 # PARAMETERS
-num_labels = 9
+num_labels = 6
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -95,7 +88,7 @@ test_indices = []
 # Read features and labels
 X = np.loadtxt(fileName)
 print(np.shape(X))
-y = np.loadtxt(labelFileName)
+y = np.loadtxt(labelFileName, dtype = str)
 
 if X.ndim == 1:
     X_reshaped = X.reshape(-1, 1)
@@ -176,8 +169,6 @@ if (not(kFoldOrNot)):
 model = SVC(kernel='linear')  # You can change kernel here (e.g., 'rbf', 'poly')
 
 if (kFoldOrNot):
-    #y = y * 2 - 1
-    
     # Perform cross-validation and get predictions for each sample
     y_pred = cross_val_predict(model, X_reshaped, y, cv=kFoldNum)
 
@@ -201,7 +192,8 @@ else:
     print(f"Test accuracy: {accuracy * 100:.2f}%")
 
 # Generate the confusion matrix with fixed size
-all_labels = np.arange(1, num_labels + 1)  # All possible labels from 1 to 25
+#all_labels = np.arange(1, num_labels + 1)
+all_labels = ["Stylus", "Screwdriver", "Battery", "Plug", "Motor", "Tripod"]
 
 if (kFoldOrNot):
     cm = confusion_matrix(y, y_pred, labels=all_labels)
