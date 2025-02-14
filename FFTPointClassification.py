@@ -66,9 +66,11 @@ regX1_1_col67 = 'Data/5x5_2_regX_1_col67.txt'
 # 1D tube, gripper arm, 6 objects
 D1_6obj2 = 'Final Data/1D_6obj2.txt'
 D1_6obj2_labels = 'Final Data/1Dtube_6obj2_labels.txt'
+D1_6obj2_lessSmooth = 'Final Data/1D_6obj2_smooth3.txt'
+D1_6obj2_v3 = 'Final Data/1D_6obj2_smooth1_wind.txt' # Reduced smoothing factor to 1, windowed 2.5 to 15 kHz
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = D1_6obj2
+fileName = D1_6obj2_v3
 
 labelFileName = D1_6obj2_labels
 
