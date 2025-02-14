@@ -22,13 +22,13 @@ D2obj_pressedFFT = ['Final Data/2Dobj_1_fftP.txt','Final Data/2Dobj_2_fftP.txt',
 D2obj_pressedTime = ['Final Data/2Dobj_1_timeP.txt', 'Final Data/2Dobj_2_timeP.txt', 'Final Data/2Dobj_3_timeP.txt']
 
 # Parameters
-pressData = D2obj_pressedFFT
-unpressData = D2_unpressedFFT
+pressData = D1obj_pressedFFT
+unpressData = D1obj_unpressedFFT
 legends = ["Pressed", "Unpressed"] # List to hold custom legends
 ylim = [30, 120] #[50, 120] #[-12e3, 8e3]
 xName = 'Frequency (kHz)' #'Time (s)' #'Frequency (kHz)'
 yName = 'Magnitude (dB)' #'Magnitude' #'Magnitude (dB)'
-freqWindow = [5, 21]
+freqWindow = [2.5, 20]
 fftOrTime = True  # True - FFT, False - Time domain
 
 
