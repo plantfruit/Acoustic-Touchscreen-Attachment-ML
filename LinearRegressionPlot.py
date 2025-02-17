@@ -3,13 +3,16 @@ import matplotlib.pyplot as plt
 from scipy.stats import linregress
 
 # Filenames
-D1_05res = 'Final Data/1D_reg.txt'
+D1_05res = ['Final Data/1D_reg.txt']
 D2_regX_1 = 'Final Data/2D_regX_1.txt'
 D2_regX_2 = 'Final Data/2D_regX_2.txt'
 D2_regX_3 = 'Final Data/2D_regX_3.txt'
 D2_regY_1 = 'Final Data/2D_regY_1.txt'
 D2_regY_2 = 'Final Data/2D_regY_2.txt'
 D2_regY_3 = 'Final Data/2D_regY_3.txt'
+
+D1_R2 = [0.932]
+D1_RMSE = [0.639]
 D2_regX = [D2_regX_1, D2_regX_2, D2_regX_3]
 D2_regY = [D2_regY_1, D2_regY_2, D2_regY_3]
 D2_regX_R2 = [0.99, 0.986, 0.979]
@@ -18,10 +21,11 @@ D2_regY_R2 = [0.976, 0.949, 0.978]
 D2_regY_RMSE = [0.134, 0.195, 0.127]
 
 # Parameters
-fileNames = D2_regY
+fileNames = D1_05res
+singleFile = True
 #file_path = D2_regX
-R2 = D2_regY_R2 #[0.932, ]
-RMSE =  D2_regY_RMSE #[0.39, ]
+R2 = D1_R2 #[0.932, ]
+RMSE =  D1_RMSE #[0.39, ]
 
 # Color options for multiple lines
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
@@ -68,11 +72,17 @@ for name in fileNames:
     # Perform linear regression to get trendline
     slope, intercept, r_value, _, _ = linregress(x_means, y_means)
     trendline = slope * x_means + intercept  # Compute trendline
-    
-    plt.scatter(x_means, y_means, color=colors[counter % len(colors)])   # Scatter plot
-    trendlineGraph, = plt.plot(x_means, trendline, color=colors[counter % len(colors)])  # Trendline
-    legendLines.append(trendlineGraph)
-    plt.errorbar(x_means, y_means, yerr= y_stds, fmt='o', color=colors[counter % len(colors)], alpha=0.7, capsize=5)
+
+    if (singleFile):
+        plt.scatter(x_means, y_means, color='b')   # Scatter plot
+        trendlineGraph, = plt.plot(x_means, trendline, color='r')  # Trendline
+        plt.errorbar(x_means, y_means, yerr= y_stds, fmt='o', color='b', alpha=0.7, capsize=5)
+    else:
+        plt.scatter(x_means, y_means, color=colors[counter % len(colors)])   # Scatter plot
+        trendlineGraph, = plt.plot(x_means, trendline, color=colors[counter % len(colors)])  # Trendline
+        plt.errorbar(x_means, y_means, yerr= y_stds, fmt='o', color=colors[counter % len(colors)], alpha=0.7, capsize=5)
+
+    legendLines.append(trendlineGraph)    
 
     # Add manually entered R² and RMSE values as text
     text_str = f"R² = {manual_r2}\nRMSE = {manual_rmse}"
@@ -93,6 +103,7 @@ if (len(fileNames) > 1):
     plt.legend(handles = legendLines, labels = legendText, loc='best')
         
 # Show the plot
+plt.savefig('figure1.pdf')
 plt.show()
 
 

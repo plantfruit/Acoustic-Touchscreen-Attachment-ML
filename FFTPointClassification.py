@@ -70,18 +70,24 @@ D1_6obj2_lessSmooth = 'Final Data/1D_6obj2_smooth3.txt'
 D1_6obj2_v3 = 'Final Data/1D_6obj2_smooth1_wind.txt' # Reduced smoothing factor to 1, windowed 2.5 to 15 kHz
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = D1_6obj2_v3
+fileName = trimic1re
 
-labelFileName = D1_6obj2_labels
+labelFileName = trimic1relabels
+
+testFileName = trimic1_3
+ 
+testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 6
+num_labels = 25
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
 total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
+internalSplit = False
+stringLabel = False
 
 # Train-test split: First 80 rows/train, last 20 rows/test per label
 train_indices = []
@@ -89,8 +95,11 @@ test_indices = []
 
 # Read features and labels
 X = np.loadtxt(fileName)
-print(np.shape(X))
-y = np.loadtxt(labelFileName, dtype = str)
+#print(np.shape(X))
+if (stringLabel):
+    y = np.loadtxt(labelFileName, dtype = str)
+else:
+    y = np.loadtxt(labelFileName)
 
 if X.ndim == 1:
     X_reshaped = X.reshape(-1, 1)
@@ -183,19 +192,27 @@ if (kFoldOrNot):
     cv_scores = cross_val_score(model, X_reshaped, y, cv=kFoldNum)
     print(cv_scores)
     print(np.mean(cv_scores))
-else:     
-    model.fit(X_train, y_train)
+else:
+    if (internalSplit):
+        model.fit(X_train, y_train)
 
-    # Make predictions on the test set
-    y_pred = model.predict(X_test)
+        # Make predictions on the test set
+        y_pred = model.predict(X_test)
+    else:
+        X_train = np.loadtxt(fileName)
+        y_train = np.loadtxt(labelFileName)
+        X_test = np.loadtxt(testFileName)
+        y_test = np.loadtxt(testLabelFileName)
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
 
     # Calculate the accuracy of the predictions
     accuracy = accuracy_score(y_test, y_pred)
     print(f"Test accuracy: {accuracy * 100:.2f}%")
 
 # Generate the confusion matrix with fixed size
-#all_labels = np.arange(1, num_labels + 1)
-all_labels = ["Stylus", "Screwdriver", "Battery", "Plug", "Motor", "Tripod"]
+all_labels = np.arange(1, num_labels + 1)
+#all_labels = ["Stylus", "Screwdriver", "Battery", "Plug", "Motor", "Tripod"]
 
 if (kFoldOrNot):
     cm = confusion_matrix(y, y_pred, labels=all_labels)
@@ -208,4 +225,5 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, ytick
 plt.title('Confusion Matrix (Fixed Size)')
 plt.xlabel('Predicted')
 plt.ylabel('True')
+plt.savefig('figure1.pdf')
 plt.show()
