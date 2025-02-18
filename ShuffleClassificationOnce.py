@@ -46,8 +46,8 @@ tube1D_6obj = 'Data/1Dtube_6obj.txt'
 tube1D_6obj_labels = 'Data/1Dtube_6obj_labels.txt'
 
 # Select filename
-featureFile = tube1D_6obj
-labelFile = tube1D_6obj_labels
+featureFile = BGwhite_vol2
+labelFile = grid3x3_labels
 
 featureTest = BGsilent
 labelTest = grid3x3_labels
@@ -60,7 +60,7 @@ y_test = np.loadtxt(labelTest)
 # Perform test-train split
 
 # Dataset Parameters
-internalSplit = True
+internalSplit = False
 num_labels = 6
 files_per_label = 10
 rows_per_file = 10 
@@ -145,5 +145,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, ytick
 plt.title('Confusion Matrix (Fixed Size)')
 plt.xlabel('Predicted')
 plt.ylabel('True')
+
+plt.savefig('figure1.pdf')
 plt.show()
 

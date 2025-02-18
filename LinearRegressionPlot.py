@@ -21,11 +21,11 @@ D2_regY_R2 = [0.976, 0.949, 0.978]
 D2_regY_RMSE = [0.134, 0.195, 0.127]
 
 # Parameters
-fileNames = D1_05res
-singleFile = True
+fileNames = D2_regY
+singleFile = False
 #file_path = D2_regX
-R2 = D1_R2 #[0.932, ]
-RMSE =  D1_RMSE #[0.39, ]
+R2 = D2_regY_R2 #[0.932, ]
+RMSE =  D2_regY_RMSE #[0.39, ]
 
 # Color options for multiple lines
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']

@@ -69,25 +69,30 @@ D1_6obj2_labels = 'Final Data/1Dtube_6obj2_labels.txt'
 D1_6obj2_lessSmooth = 'Final Data/1D_6obj2_smooth3.txt'
 D1_6obj2_v3 = 'Final Data/1D_6obj2_smooth1_wind.txt' # Reduced smoothing factor to 1, windowed 2.5 to 15 kHz
 
-# SELECT FILENAMES FOR ANALYSIS
-fileName = trimic1re
+BGwhite_vol1 = 'Data/BGwhite_vol1.txt'
+BGwhite_vol2 = 'Data/BGwhite_vol2.txt'
+BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
+grid3x3_labels  = 'Data/3x3_labels.txt'
 
-labelFileName = trimic1relabels
+# SELECT FILENAMES FOR ANALYSIS
+fileName = BGwhite_vol3
+
+labelFileName = grid3x3_labels
 
 testFileName = trimic1_3
  
 testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 25
+num_labels = 9
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
 total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
-internalSplit = False
-stringLabel = False
+internalSplit = True
+stringLabel = False # False - Numerical labels
 
 # Train-test split: First 80 rows/train, last 20 rows/test per label
 train_indices = []
@@ -139,12 +144,12 @@ if (not(kFoldOrNot)):
     ##    test_indices.extend(label_rows[140:150])
         
         # Split the indices: first 80 for training, last 20 for testing
-        train_indices.extend(label_rows[:80])
-        test_indices.extend(label_rows[80:])
+        #train_indices.extend(label_rows[:80])
+        #test_indices.extend(label_rows[80:])
 
         # Reversed order
-        #train_indices.extend(label_rows[100:])
-        #test_indices.extend(label_rows[:100])
+        train_indices.extend(label_rows[50:])
+        test_indices.extend(label_rows[:50])
         
         # Split the indices: 
         # First 20 rows and last 60 rows for training

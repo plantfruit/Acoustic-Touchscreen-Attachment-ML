@@ -90,5 +90,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, ytick
 plt.title('Confusion Matrix (Fixed Size)')
 plt.xlabel('Predicted')
 plt.ylabel('True')
+
+plt.savefig('figure1.pdf')
 plt.show()
 
