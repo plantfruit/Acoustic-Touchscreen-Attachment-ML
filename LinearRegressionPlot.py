@@ -29,6 +29,7 @@ RMSE =  D2_regY_RMSE #[0.39, ]
 
 # Color options for multiple lines
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
+lineStyles = ['-', '--', '-.', ':']  
 legendLines = []
 legendText = []
 
@@ -79,7 +80,7 @@ for name in fileNames:
         plt.errorbar(x_means, y_means, yerr= y_stds, fmt='o', color='b', alpha=0.7, capsize=5)
     else:
         plt.scatter(x_means, y_means, color=colors[counter % len(colors)])   # Scatter plot
-        trendlineGraph, = plt.plot(x_means, trendline, color=colors[counter % len(colors)])  # Trendline
+        trendlineGraph, = plt.plot(x_means, trendline, color=colors[counter % len(colors)], linestyle = lineStyles[counter])  # Trendline
         plt.errorbar(x_means, y_means, yerr= y_stds, fmt='o', color=colors[counter % len(colors)], alpha=0.7, capsize=5)
 
     legendLines.append(trendlineGraph)    
