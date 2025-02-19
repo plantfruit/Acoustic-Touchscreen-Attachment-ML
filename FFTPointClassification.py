@@ -75,16 +75,16 @@ BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = BGwhite_vol3
+fileName = D1_6obj2_v3
 
-labelFileName = grid3x3_labels
+labelFileName = D1_6obj2_labels
 
 testFileName = trimic1_3
  
 testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 9
+num_labels = 6
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -92,7 +92,9 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = False # False - Numerical labels
+stringLabel = True # False - Numerical labels
+labelFontsize = 18
+textFontsize = 12
 
 # Train-test split: First 80 rows/train, last 20 rows/test per label
 train_indices = []
@@ -216,8 +218,10 @@ else:
     print(f"Test accuracy: {accuracy * 100:.2f}%")
 
 # Generate the confusion matrix with fixed size
-all_labels = np.arange(1, num_labels + 1)
-#all_labels = ["Stylus", "Screwdriver", "Battery", "Plug", "Motor", "Tripod"]
+if (not(stringLabel)):
+    all_labels = np.arange(1, num_labels + 1)
+else:
+    all_labels = ["Stylus", "Screwdriver", "Battery", "Plug", "Motor", "Tripod"]
 
 if (kFoldOrNot):
     cm = confusion_matrix(y, y_pred, labels=all_labels)
@@ -227,8 +231,10 @@ else:
 # Visualize the confusion matrix
 plt.figure(figsize=(10, 8))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, yticklabels=all_labels)
-plt.title('Confusion Matrix (Fixed Size)')
-plt.xlabel('Predicted')
-plt.ylabel('True')
+#plt.title('Confusion Matrix (Fixed Size)')
+plt.xlabel('Predicted', fontsize = labelFontsize)
+plt.ylabel('True', fontsize = labelFontsize)
+plt.xticks(fontsize = textFontsize)
+plt.yticks(fontsize = textFontsize)
 plt.savefig('figure1.pdf')
 plt.show()
