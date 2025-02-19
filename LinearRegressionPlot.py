@@ -10,13 +10,13 @@ D2_regX_3 = 'Final Data/2D_regX_3.txt'
 D2_regY_1 = 'Final Data/2D_regY_1.txt'
 D2_regY_2 = 'Final Data/2D_regY_2.txt'
 D2_regY_3 = 'Final Data/2D_regY_3.txt'
-D2_regX = 'Final Data/2D_regX.txt'
-D2_regY = 'Final Data/2D_regY.txt'
+D2_regXall = 'Final Data/2D_regX.txt'
+D2_regYall = 'Final Data/2D_regY.txt'
 
 D1_R2 = [0.932]
 D1_RMSE = [0.639]
-D2_regX = [D2_regX, D2_regX_1, D2_regX_2, D2_regX_3]
-D2_regY = [D2_regY, D2_regY_1, D2_regY_2, D2_regY_3]
+D2_regX = [D2_regXall, D2_regX_1, D2_regX_2, D2_regX_3]
+D2_regY = [D2_regYall, D2_regY_1, D2_regY_2, D2_regY_3]
 D2_regX_R2 = [0.992, 0.99, 0.986, 0.979]
 D2_regX_RMSE = [0.076, 0.087, 0.1, 0.125]
 D2_regY_R2 = [0.985, 0.976, 0.949, 0.978]
@@ -27,7 +27,10 @@ fileNames = D2_regY
 singleFile = False
 #file_path = D2_regX
 R2 = D2_regY_R2 #[0.932, ]
-RMSE =  D2_regY_RMSE #[0.39, ]
+RMSE =  D2_regX_RMSE #[0.39, ]Y
+
+labelFontsize = 18
+tickFontsize = 12
 
 # Color options for multiple lines
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
@@ -98,16 +101,18 @@ for name in fileNames:
     counter = counter + 1
 
     # Ensure consistent axes
+    plt.yticks(fontsize = tickFontsize)
+    plt.xticks(fontsize = tickFontsize)
     #plt.yticks(np.arange(0,y_means[len(y_means) - 1] + y_means[0], 1.0))
     plt.ylim(0,y_means[len(y_means) - 1] + y_means[0])
     #plt.xticks(np.arange(0,y_means[len(y_means) - 1] + y_means[0], 1.0))
     plt.xlim(0,y_means[len(y_means) - 1] + y_means[0])
 
 # Add titles and labels
-plt.xlabel("Actual Distance (cm)")
-plt.ylabel("Predicted Distance (cm)")
+plt.xlabel("Actual Distance (cm)", fontsize = labelFontsize)
+plt.ylabel("Predicted Distance (cm)", fontsize = labelFontsize)
 if (len(fileNames) > 1):
-    plt.legend(handles = legendLines, labels = legendText, loc='best')
+    plt.legend(handles = legendLines, labels = legendText, loc='best', fontsize = tickFontsize)
         
 # Show the plot
 plt.savefig('figure1.pdf')
