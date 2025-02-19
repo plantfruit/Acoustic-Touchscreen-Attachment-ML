@@ -10,15 +10,17 @@ D2_regX_3 = 'Final Data/2D_regX_3.txt'
 D2_regY_1 = 'Final Data/2D_regY_1.txt'
 D2_regY_2 = 'Final Data/2D_regY_2.txt'
 D2_regY_3 = 'Final Data/2D_regY_3.txt'
+D2_regX = 'Final Data/2D_regX.txt'
+D2_regY = 'Final Data/2D_regY.txt'
 
 D1_R2 = [0.932]
 D1_RMSE = [0.639]
-D2_regX = [D2_regX_1, D2_regX_2, D2_regX_3]
-D2_regY = [D2_regY_1, D2_regY_2, D2_regY_3]
-D2_regX_R2 = [0.99, 0.986, 0.979]
-D2_regX_RMSE = [0.087, 0.1, 0.125]
-D2_regY_R2 = [0.976, 0.949, 0.978]
-D2_regY_RMSE = [0.134, 0.195, 0.127]
+D2_regX = [D2_regX, D2_regX_1, D2_regX_2, D2_regX_3]
+D2_regY = [D2_regY, D2_regY_1, D2_regY_2, D2_regY_3]
+D2_regX_R2 = [0.992, 0.99, 0.986, 0.979]
+D2_regX_RMSE = [0.076, 0.087, 0.1, 0.125]
+D2_regY_R2 = [0.985, 0.976, 0.949, 0.978]
+D2_regY_RMSE = [0.104, 0.134, 0.195, 0.127]
 
 # Parameters
 fileNames = D2_regY
@@ -88,7 +90,11 @@ for name in fileNames:
     # Add manually entered R² and RMSE values as text
     text_str = f"R² = {manual_r2}\nRMSE = {manual_rmse}"
     textBox = plt.text(7.5, 1, text_str, fontsize=12, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
-    legendText.append(f'Microphone {counter + 1}, R² = {R2[counter]}\nRMSE = {RMSE[counter]}')
+
+    if (counter == 0):
+        legendText.append(f'All Microphones, R² = {R2[counter]}\nRMSE = {RMSE[counter]}')
+    else:
+        legendText.append(f'Microphone {counter}, R² = {R2[counter]}\nRMSE = {RMSE[counter]}')
     counter = counter + 1
 
     # Ensure consistent axes

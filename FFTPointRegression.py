@@ -24,6 +24,10 @@ regY1_3_cols1to45_137to140 = 'Data/5x5_1_regY_3_cols1to46_cols137to140.txt'
 regY1_1 = 'Data/5x5_regY_1.txt'
 regY1_2 = 'Data/5x5_regY_2.txt'
 regY1_3 = 'Data/5x5_regY_3.txt'
+
+regX1 = 'Data/5x5_regX.txt'
+regY1 = 'Data/5x5_regY.txt'
+
 # New balloon, hard force (full FFT spectrum)
 regX2_1 = 'Data/5x5_2_regX_1.txt'
 regX2_2 = 'Data/5x5_2_regX_2.txt'
@@ -40,7 +44,7 @@ tube1D_res05 = 'Data/1Dtube_05res.txt'
 tube1D_res05_labels = 'Data/1Dtube_05res_labels.txt'
 
 # Select filename
-featureFile = regX1_3
+featureFile = regY1
 labelFile = regX1_10points_0_3mm
 
 X = np.loadtxt(featureFile)
@@ -52,7 +56,7 @@ if X.ndim == 1:
 # Perform test-train split
 
 # Dataset Parameters
-num_labels = 10
+num_labels = 17
 files_per_label = 10
 rows_per_file = 10 
 
