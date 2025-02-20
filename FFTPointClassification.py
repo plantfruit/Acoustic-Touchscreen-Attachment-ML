@@ -75,16 +75,16 @@ BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = D1_6obj2_v3
+fileName = trimic1re
 
-labelFileName = D1_6obj2_labels
+labelFileName = trimic1relabels
 
 testFileName = trimic1_3
  
 testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 6
+num_labels = 25
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -92,8 +92,8 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = True # False - Numerical labels
-labelFontsize = 18
+stringLabel = False # False - Numerical labels
+labelFontsize = 20
 textFontsize = 12
 
 # Train-test split: First 80 rows/train, last 20 rows/test per label
