@@ -27,7 +27,7 @@ fileNames = D2_regY
 singleFile = False
 #file_path = D2_regX
 R2 = D2_regY_R2 #[0.932, ]
-RMSE =  D2_regX_RMSE #[0.39, ]Y
+RMSE =  D2_regY_RMSE #[0.39, ]Y
 
 labelFontsize = 18
 tickFontsize = 12
