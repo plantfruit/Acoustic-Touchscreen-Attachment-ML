@@ -35,7 +35,7 @@ trimic1_1and3 = 'Data/5x5_trimic1_1and3.txt'
 trimic1_1pulse = 'Data/5x5_trimic1_onepulse.txt' # Extract 1 pulse instead of 10 pulses
 trimic1_1pulse_labels = 'Data/5x5_trimic1_onepulse_labels.txt'
 
-miscobj1 = 'Data/miscobj1.txt'
+miscobj1 = 'Data/miscobj3.txt'
 miscobj1labels = 'Data/miscobj1_labels.txt'
 
 # Small array with 3 labels, and 3 "pulses per file," that is used to test the grouping function
@@ -75,16 +75,16 @@ BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = trimic1re
+fileName = miscobj1
 
-labelFileName = trimic1relabels
+labelFileName = D1_6obj2_labels
 
 testFileName = trimic1_3
  
 testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 25
+num_labels = 6
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -92,7 +92,7 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = False # False - Numerical labels
+stringLabel = True # False - Numerical labels
 labelFontsize = 20
 textFontsize = 12
 
