@@ -68,6 +68,9 @@ D1_6obj2 = 'Final Data/1D_6obj2.txt'
 D1_6obj2_labels = 'Final Data/1Dtube_6obj2_labels.txt'
 D1_6obj2_lessSmooth = 'Final Data/1D_6obj2_smooth3.txt'
 D1_6obj2_v3 = 'Final Data/1D_6obj2_smooth1_wind.txt' # Reduced smoothing factor to 1, windowed 2.5 to 15 kHz
+# 1 to 9 cm, at 0.5 cm resolution
+tube1D_res05 = 'Data/1Dtube_05res.txt'
+tube1D_res05_labels = 'Data/1Dtube_05res_labels.txt'
 
 BGwhite_vol1 = 'Data/BGwhite_vol1.txt'
 BGwhite_vol2 = 'Data/BGwhite_vol2.txt'
@@ -75,16 +78,16 @@ BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = miscobj1
+fileName = BGwhite_vol3
 
-labelFileName = D1_6obj2_labels
+labelFileName = grid3x3_labels
 
 testFileName = trimic1_3
  
 testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 6
+num_labels = 9
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -92,7 +95,8 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = True # False - Numerical labels
+stringLabel = False # False - Numerical labels
+floatLabel = False 
 labelFontsize = 20
 textFontsize = 12
 
@@ -105,6 +109,8 @@ X = np.loadtxt(fileName)
 #print(np.shape(X))
 if (stringLabel):
     y = np.loadtxt(labelFileName, dtype = str)
+elif (floatLabel):
+    y = np.loadtxt(labelFileName) * 10
 else:
     y = np.loadtxt(labelFileName)
 
@@ -220,6 +226,7 @@ else:
 # Generate the confusion matrix with fixed size
 if (not(stringLabel)):
     all_labels = np.arange(1, num_labels + 1)
+    #all_labels = (np.arange(1, num_labels + 1) * 0.5 + 0.5 )* 10
 else:
     all_labels = ["Stylus", "Screwdriver", "Battery", "Plug", "Motor", "Tripod"]
 

@@ -27,10 +27,10 @@ fileNames = D2_regY
 singleFile = False
 #file_path = D2_regX
 R2 = D2_regY_R2 #[0.932, ]
-RMSE =  D2_regY_RMSE #[0.39, ]Y
+RMSE =  D2_regY_R2 #[0.39, ]Y
 
-labelFontsize = 18
-tickFontsize = 12
+labelFontsize = 32
+tickFontsize = 26
 
 # Color options for multiple lines
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
@@ -39,7 +39,7 @@ legendLines = []
 legendText = []
 
 counter = 0
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(12, 9))
 for name in fileNames:
     data = np.loadtxt(name) #, delimiter="\t")
 
@@ -90,14 +90,18 @@ for name in fileNames:
 
     legendLines.append(trendlineGraph)    
 
-    # Add manually entered R² and RMSE values as text
-    text_str = f"R² = {manual_r2}\nRMSE = {manual_rmse}"
-    textBox = plt.text(7.5, 1, text_str, fontsize=12, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
-
+    if (singleFile):
+        # Add manually entered R² and RMSE values as text
+        text_str = f"R² = {manual_r2}"#\nRMSE = {manual_rmse}"
+        textBox = plt.text(1, 9, text_str, fontsize=tickFontsize, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
+        #textBox = plt.text(6, 1.5, text_str, fontsize=tickFontsize, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
+        #(6,1.5) for 1D
+        #(2, 0.75) for 2D
+    
     if (counter == 0):
-        legendText.append(f'All Microphones, R² = {R2[counter]}\nRMSE = {RMSE[counter]}')
+        legendText.append(f'All Microphones, R² = {R2[counter]}') #\nRMSE = {RMSE[counter]}')
     else:
-        legendText.append(f'Microphone {counter}, R² = {R2[counter]}\nRMSE = {RMSE[counter]}')
+        legendText.append(f'Microphone {counter}, R² = {R2[counter]}') #\nRMSE = {RMSE[counter]}')
     counter = counter + 1
 
     # Ensure consistent axes
@@ -112,7 +116,7 @@ for name in fileNames:
 plt.xlabel("Actual Distance (cm)", fontsize = labelFontsize)
 plt.ylabel("Predicted Distance (cm)", fontsize = labelFontsize)
 if (len(fileNames) > 1):
-    plt.legend(handles = legendLines, labels = legendText, loc='best', fontsize = tickFontsize)
+    plt.legend(handles = legendLines, labels = legendText, loc='upper left', fontsize = tickFontsize * 0.9)
         
 # Show the plot
 plt.savefig('figure1.pdf')

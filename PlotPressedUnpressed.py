@@ -25,15 +25,17 @@ D2obj_pressedFFT = ['Final Data/2Dobj_1_fftP.txt','Final Data/2Dobj_2_fftP.txt',
 D2obj_pressedTime = ['Final Data/2Dobj_1_timeP.txt', 'Final Data/2Dobj_2_timeP.txt', 'Final Data/2Dobj_3_timeP.txt']
 
 # Parameters
-pressData = D2v2_pressedFFT
-unpressData = D2_unpressedFFT
+pressData = D2_pressedTime
+unpressData = D2_unpressedTime
 legends = ["Pressed", "Unpressed"] # List to hold custom legends
-ylim = [30, 120] #[-100, 100] #[30, 120] # [50, 120] #[-12e3, 8e3] # [-33e3, 33e3]
-xName = 'Frequency (kHz)' #'Time (s)' #'Frequency (kHz)'
+ylim = [-60, 60] #[-60, 60] #[30, 120] # [50, 120] #[-12e3, 8e3] # [-33e3, 33e3]
+xName = 'Time (ms)' #'Time (ms)' #'Frequency (kHz)'
 yName = 'Magnitude (dB)' #'Magnitude' #'Magnitude (dB)'
 freqWindow = [5, 21] # [2.5, 20] for 1D, [5 21] for 2D
-fftOrTime = True  # True - FFT, False - Time domain
+fftOrTime = False # True - FFT, False - Time domain
 
+labelFontsize = 32
+textFontsize = 26
 
 # Sampling frequency
 fs = 48e3  # in Hz       
@@ -43,7 +45,7 @@ fs = 48e3  # in Hz
 counter = 0        
 for file_path in pressData:
     # Initialize figure for the plot
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(12, 9))
 
     # Load the data from the text file
     pressLine = np.loadtxt(file_path)
@@ -79,9 +81,11 @@ for file_path in pressData:
     
     # Customization
     plt.axis([None, None, ylim[0], ylim[1]])
-    plt.xlabel(xName)
-    plt.ylabel(yName)
-    plt.legend(legends, loc='upper right')  # Adjust legend position
+    plt.xlabel(xName, fontsize = labelFontsize)
+    plt.ylabel(yName, fontsize = labelFontsize)    
+    plt.xticks(fontsize = textFontsize)
+    plt.yticks(fontsize = textFontsize)
+    plt.legend(legends, loc='upper right', fontsize = textFontsize)  # Adjust legend position
     #plt.grid(True)
     plt.savefig('figure'+str(counter)+'.pdf')
     plt.show()
