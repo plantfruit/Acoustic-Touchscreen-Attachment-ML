@@ -106,8 +106,7 @@ for file_path in pressData:
     plt.ylabel(yName, fontsize = labelFontsize)    
     plt.xticks(fontsize = textFontsize)
     plt.yticks(fontsize = textFontsize)
-    plt.legend(legends)
-    #plt.legend(legends, loc='upper right', fontsize = textFontsize)  # Adjust legend position
+    plt.legend(legends, loc='upper right', fontsize = textFontsize)  # Adjust legend position
     #plt.grid(True)
       
     

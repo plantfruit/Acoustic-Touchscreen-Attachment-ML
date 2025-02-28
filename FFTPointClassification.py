@@ -77,17 +77,22 @@ BGwhite_vol2 = 'Data/BGwhite_vol2.txt'
 BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
-# SELECT FILENAMES FOR ANALYSIS
-fileName = miscobj1
+# 3x3 grid, 18-20 kHz, linear chirp and exponential chirp
+chirpLin = 'Final Data/ChirpLin.txt'
+chirpExp = 'Final Data/ChirpExp.txt'
+standard3x3_labels = 'Final Data/3x3_labels.txt'
 
-labelFileName = miscobj1labels
+# SELECT FILENAMES FOR ANALYSIS
+fileName = chirpExp
+
+labelFileName = standard3x3_labels
 
 testFileName = trimic1_3
  
 testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 6
+num_labels = 9
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -95,7 +100,7 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = True # False - Numerical labels
+stringLabel = False # False - Numerical labels
 floatLabel = False 
 labelFontsize = 32
 textFontsize = 26
@@ -241,7 +246,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, ytick
 #plt.title('Confusion Matrix (Fixed Size)')
 plt.xlabel('Predicted', fontsize = labelFontsize)
 plt.ylabel('True', fontsize = labelFontsize)
-plt.xticks(fontsize = textFontsize, rotation= -30, ha='left')
+plt.xticks(fontsize = textFontsize)#, rotation= -30, ha='left')
 plt.yticks(fontsize = textFontsize, rotation = 0)#, rotation= 30, ha='right')
 plt.savefig('figure1.pdf')
 plt.tight_layout()
