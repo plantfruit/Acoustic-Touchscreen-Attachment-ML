@@ -1,600 +1,600 @@
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   1.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   2.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   3.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   4.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   5.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
-   6.0000000e+00
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Stylus
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Screwdriver
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Battery
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Plug
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Motor
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod
+Tripod

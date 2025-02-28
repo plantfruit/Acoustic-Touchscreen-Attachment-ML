@@ -36,7 +36,7 @@ trimic1_1pulse = 'Data/5x5_trimic1_onepulse.txt' # Extract 1 pulse instead of 10
 trimic1_1pulse_labels = 'Data/5x5_trimic1_onepulse_labels.txt'
 
 miscobj1 = 'Data/miscobj3.txt'
-miscobj1labels = 'Data/miscobj1_labels.txt'
+miscobj1labels = 'Data/miscobj3_labels.txt'
 
 # Small array with 3 labels, and 3 "pulses per file," that is used to test the grouping function
 groupingTest = 'Data/groupsorttest_features.txt'
@@ -78,16 +78,16 @@ BGwhite_vol3 = 'Data/BGwhite_vol3.txt'
 grid3x3_labels  = 'Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = BGwhite_vol3
+fileName = miscobj1
 
-labelFileName = grid3x3_labels
+labelFileName = miscobj1labels
 
 testFileName = trimic1_3
  
 testLabelFileName = trimic1relabels
 
 # PARAMETERS
-num_labels = 9
+num_labels = 6
 files_per_label = 10
 rows_per_file = 10 
 total_files = num_labels * files_per_label
@@ -95,10 +95,10 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = False # False - Numerical labels
+stringLabel = True # False - Numerical labels
 floatLabel = False 
-labelFontsize = 20
-textFontsize = 12
+labelFontsize = 32
+textFontsize = 26
 
 # Train-test split: First 80 rows/train, last 20 rows/test per label
 train_indices = []
@@ -236,12 +236,13 @@ else:
     cm = confusion_matrix(y_test, y_pred, labels=all_labels)
 
 # Visualize the confusion matrix
-plt.figure(figsize=(10, 8))
+plt.figure(figsize=(15, 12))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, yticklabels=all_labels)
 #plt.title('Confusion Matrix (Fixed Size)')
 plt.xlabel('Predicted', fontsize = labelFontsize)
 plt.ylabel('True', fontsize = labelFontsize)
-plt.xticks(fontsize = textFontsize)
-plt.yticks(fontsize = textFontsize)
+plt.xticks(fontsize = textFontsize, rotation= -30, ha='left')
+plt.yticks(fontsize = textFontsize, rotation = 0)#, rotation= 30, ha='right')
 plt.savefig('figure1.pdf')
+plt.tight_layout()
 plt.show()
