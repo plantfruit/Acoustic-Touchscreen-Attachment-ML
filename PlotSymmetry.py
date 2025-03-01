@@ -56,18 +56,12 @@ fs = 48e3  # in Hz
 plt.figure(figsize=(12, 9))
 # Iterate over each file and plot its data
 counter = 0
-for file_path in pressData:
-    
-
+artists = []
+for file_path in pressData:  
     # Load the data from the text file
     pressLine = np.loadtxt(file_path)
     unpressLine = np.loadtxt(unpressData[counter])
     print(np.shape(pressLine))
-    
-    # Ensure the data is 1D
-##    if data.ndim != 1:
-##        print(f"File {file_path} is not 1 column. Skipping.")
-##        continue
     
     # Generate x-axis in seconds
     if (not(fftOrTime)):
@@ -82,7 +76,8 @@ for file_path in pressData:
         x = np.linspace(freqWindow[0], freqWindow[1], len(pressLine))        
 
     # Plot the data
-    plt.plot(x, pressLine, color=colors[counter % len(colors)], linestyle = lineStyles[counter])  # Use file name as legend
+    lineGraph, = plt.plot(x, pressLine, color=colors[counter % len(colors)], linestyle = lineStyles[counter]) # Use file name as legend
+    artists.append(lineGraph)
     #plt.plot(x, unpressLine, color = 'orange')
 
     # Optional: Customize legend names
@@ -92,7 +87,7 @@ for file_path in pressData:
         markerSize = 100
         pressPeaks, _ = find_peaks(pressLine, prominence = 2)
         unpressPeaks, _ = find_peaks(unpressLine)
-        #plt.scatter(x[pressPeaks], pressLine[pressPeaks], color = 'red', s = markerSize)
+        plt.scatter(x[pressPeaks], pressLine[pressPeaks], color = colors[counter % len(colors)], s = markerSize)
         #plt.scatter(x[unpressPeaks], unpressLine[unpressPeaks], color = 'green', s = markerSize)
         print(x[pressPeaks])
         print(pressLine[pressPeaks])
@@ -106,12 +101,12 @@ for file_path in pressData:
     plt.ylabel(yName, fontsize = labelFontsize)    
     plt.xticks(fontsize = textFontsize)
     plt.yticks(fontsize = textFontsize)
-    plt.legend(legends, loc='upper right', fontsize = textFontsize)  # Adjust legend position
+    
     #plt.grid(True)
       
     
     counter = counter + 1
 
-
+plt.legend(handles = artists, labels= legends, loc='upper right', fontsize = textFontsize)  # Adjust legend position
 plt.savefig('figure'+str(counter)+'.pdf')
 plt.show()  
