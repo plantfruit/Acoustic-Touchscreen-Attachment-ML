@@ -103,7 +103,7 @@ internalSplit = True
 stringLabel = False # False - Numerical labels
 floatLabel = False 
 labelFontsize = 32
-textFontsize = 26
+textFontsize = 26 #26
 
 # Train-test split: First 80 rows/train, last 20 rows/test per label
 train_indices = []
@@ -241,13 +241,23 @@ else:
     cm = confusion_matrix(y_test, y_pred, labels=all_labels)
 
 # Visualize the confusion matrix
-plt.figure(figsize=(15, 12))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, yticklabels=all_labels,  annot_kws={"size": textFontsize})
+fig = plt.figure(figsize=(12, 9))
+ax = sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, yticklabels=all_labels,
+            annot_kws={"size": textFontsize})
+# use matplotlib.colorbar.Colorbar object
+cbar = ax.collections[0].colorbar
+# here set the labelsize by 20
+cbar.ax.tick_params(labelsize=textFontsize)
 #plt.title('Confusion Matrix (Fixed Size)')
 plt.xlabel('Predicted', fontsize = labelFontsize)
 plt.ylabel('True', fontsize = labelFontsize)
-plt.xticks(fontsize = textFontsize)#, rotation= -30, ha='left')
+if (stringLabel):
+    textRot = -30
+    plt.xticks(fontsize = textFontsize, rotation= textRot, ha='left')
+else:
+    textRot = 0
+    plt.xticks(fontsize = textFontsize)
 plt.yticks(fontsize = textFontsize, rotation = 0)#, rotation= 30, ha='right')
-plt.savefig('figure1.pdf')
 plt.tight_layout()
+plt.savefig('figure1.pdf', bbox_inches='tight')
 plt.show()
