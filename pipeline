@@ -1,0 +1,14 @@
+// Data Processing Pipeline
+digraph {
+	A [label="Data Collection"]
+	B [label="Data Cleaning"]
+	C [label="Feature Extraction"]
+	D [label="Model Training"]
+	E [label=Evaluation]
+	F [label=Deployment]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+}

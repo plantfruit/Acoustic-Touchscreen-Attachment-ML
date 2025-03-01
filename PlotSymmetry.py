@@ -26,13 +26,13 @@ D1obj_unpressedFFT = ['Final Data/1D_6obj_fftU.txt']
 D2obj_pressedFFT = ['Final Data/2Dobj_1_fftP.txt','Final Data/2Dobj_2_fftP.txt','Final Data/2Dobj_3_fftP.txt']
 D2obj_pressedTime = ['Final Data/2Dobj_1_timeP.txt', 'Final Data/2Dobj_2_timeP.txt', 'Final Data/2Dobj_3_timeP.txt']
 
-Sym_pressed = ['1D Rows/1cm.txt', '1D Rows/3cm.txt', '1D Rows/7cm.txt', '1D Rows/9cm.txt']
+Sym_pressed = ['1D Rows/1cm.txt', '1D Rows/3cm.txt', '1D Rows/7cm.txt', '1D Rows/9cm.txt', 'Final Data/1D_fftU.txt']
 Sym_unpressed = ['1D Rows/9cm.txt', '1D Rows/8cm.txt', '1D Rows/7cm.txt', '1D Rows/6cm.txt']
 
 # Parameters
 pressData = Sym_pressed
 unpressData = Sym_unpressed
-legends = ["1 cm", "3 cm", "7 cm", "9 cm"]
+legends = ["1 cm", "3 cm", "7 cm", "9 cm", "Unpressed"]
 #legends = ["1 cm, 2 cm, 3 cm, 4 cm", "6 cm, 7 cm, 8 cm, 9 cm"] # List to hold custom legends
 ylim = [30, 120] #[-60, 60] #[30, 120] # [50, 120] #[-12e3, 8e3] # [-33e3, 33e3]
 xName = 'Frequency (kHz)' #'Time (ms)' #'Frequency (kHz)'
@@ -45,7 +45,7 @@ labelFontsize = 32
 textFontsize = 26
 
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
-lineStyles = ['-', '--', '-.', ':']  
+lineStyles = ['-', '--', '-.', ':', '-']  
 
 # Sampling frequency
 fs = 48e3  # in Hz       
@@ -60,7 +60,6 @@ artists = []
 for file_path in pressData:  
     # Load the data from the text file
     pressLine = np.loadtxt(file_path)
-    unpressLine = np.loadtxt(unpressData[counter])
     print(np.shape(pressLine))
     
     # Generate x-axis in seconds
@@ -78,17 +77,13 @@ for file_path in pressData:
     # Plot the data
     lineGraph, = plt.plot(x, pressLine, color=colors[counter % len(colors)], linestyle = lineStyles[counter]) # Use file name as legend
     artists.append(lineGraph)
-    #plt.plot(x, unpressLine, color = 'orange')
-
     # Optional: Customize legend names
     #legends.append(legends)
 
     if (plotPeaks):
         markerSize = 100
         pressPeaks, _ = find_peaks(pressLine, prominence = 2)
-        unpressPeaks, _ = find_peaks(unpressLine)
         plt.scatter(x[pressPeaks], pressLine[pressPeaks], color = colors[counter % len(colors)], s = markerSize)
-        #plt.scatter(x[unpressPeaks], unpressLine[unpressPeaks], color = 'green', s = markerSize)
         print(x[pressPeaks])
         print(pressLine[pressPeaks])
 

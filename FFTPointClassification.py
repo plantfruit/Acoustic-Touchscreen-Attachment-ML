@@ -83,9 +83,9 @@ chirpExp = 'Final Data/ChirpExp.txt'
 standard3x3_labels = 'Final Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = chirpExp
+fileName = g3x3_trimic1
 
-labelFileName = standard3x3_labels
+labelFileName = g3x3_trimic1_labels
 
 testFileName = trimic1_3
  
@@ -100,7 +100,7 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = False # False - Numerical labels
+stringLabel = True # False - Numerical labels
 floatLabel = False 
 labelFontsize = 32
 textFontsize = 26 #26
@@ -243,7 +243,7 @@ else:
 # Visualize the confusion matrix
 fig = plt.figure(figsize=(12, 9))
 ax = sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, yticklabels=all_labels,
-            annot_kws={"size": textFontsize})
+            annot_kws={"size": textFontsize}, vmax = files_per_label * rows_per_file)
 # use matplotlib.colorbar.Colorbar object
 cbar = ax.collections[0].colorbar
 # here set the labelsize by 20
