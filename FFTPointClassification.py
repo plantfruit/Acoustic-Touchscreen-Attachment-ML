@@ -83,7 +83,7 @@ chirpExp = 'Final Data/ChirpExp.txt'
 standard3x3_labels = 'Final Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = chirpLin
+fileName = chirpExp
 
 labelFileName = standard3x3_labels
 
