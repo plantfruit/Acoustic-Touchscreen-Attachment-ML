@@ -83,7 +83,7 @@ chirpExp = 'Final Data/ChirpExp.txt'
 standard3x3_labels = 'Final Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = chirpExp
+fileName = chirpLin
 
 labelFileName = standard3x3_labels
 
@@ -242,7 +242,7 @@ else:
 
 # Visualize the confusion matrix
 plt.figure(figsize=(15, 12))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, yticklabels=all_labels)
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=all_labels, yticklabels=all_labels,  annot_kws={"size": textFontsize})
 #plt.title('Confusion Matrix (Fixed Size)')
 plt.xlabel('Predicted', fontsize = labelFontsize)
 plt.ylabel('True', fontsize = labelFontsize)

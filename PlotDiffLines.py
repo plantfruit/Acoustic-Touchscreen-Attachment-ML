@@ -5,35 +5,13 @@ from scipy.signal import find_peaks
 
 
 # Filenames
-D2_pressedTime = ['Final Data/2D_time1.txt', 'Final Data/2D_time2.txt', 'Final Data/2D_time3.txt']
-D2_unpressedTime = ['Final Data/2D_time1U.txt', 'Final Data/2D_time2U.txt', 'Final Data/2D_time3U.txt']
-D2_pressedFFT = ['Final Data/2D_fft1P.txt', 'Final Data/2D_fft2P.txt', 'Final Data/2D_fft3P.txt']
-D2_unpressedFFT = ['Final Data/2D_fft1U.txt', 'Final Data/2D_fft2U.txt', 'Final Data/2D_fft3U.txt']
-
-D2v2_pressedFFT = ['Final Data/2D_v2_fft1P.txt', 'Final Data/2D_v2_fft2P.txt', 'Final Data/2D_v2_fft3P.txt']
-D2v2_pressedTime = ['Final Data/2D_v2_time1P.txt', 'Final Data/2D_v2_time2P.txt', 'Final Data/2D_v2_time3P.txt']
-
-D1_pressedTime = ['Final Data/1D_timeP.txt']
-D1_unpressedTime = ['Final Data/1D_timeU.txt']
-D1_pressedFFT = ['Final Data/1D_fftP.txt']
-D1_unpressedFFT = ['Final Data/1D_fftU.txt']
-
-D1obj_pressedTime = ['Final Data/1D_6obj_timeP.txt']
-D1obj_unpressedTime = ['Final Data/1D_6obj_timeU.txt']
-D1obj_pressedFFT = ['Final Data/1D_6obj_fftP.txt']
-D1obj_unpressedFFT = ['Final Data/1D_6obj_fftU.txt']
-
-D2obj_pressedFFT = ['Final Data/2Dobj_1_fftP.txt','Final Data/2Dobj_2_fftP.txt','Final Data/2Dobj_3_fftP.txt']
-D2obj_pressedTime = ['Final Data/2Dobj_1_timeP.txt', 'Final Data/2Dobj_2_timeP.txt', 'Final Data/2Dobj_3_timeP.txt']
-
-Sym_pressed = ['1D Rows/1cm.txt', '1D Rows/3cm.txt', '1D Rows/7cm.txt', '1D Rows/9cm.txt']
-Sym_unpressed = ['1D Rows/9cm.txt', '1D Rows/8cm.txt', '1D Rows/7cm.txt', '1D Rows/6cm.txt']
+noiseIso1D = []
+noiseIso2D = []
 
 # Parameters
-pressData = Sym_pressed
-unpressData = Sym_unpressed
-legends = ["1 cm", "3 cm", "7 cm", "9 cm"]
-#legends = ["1 cm, 2 cm, 3 cm, 4 cm", "6 cm, 7 cm, 8 cm, 9 cm"] # List to hold custom legends
+fileNames = 
+legends = ["Passive Cancellation", "A]
+
 ylim = [30, 120] #[-60, 60] #[30, 120] # [50, 120] #[-12e3, 8e3] # [-33e3, 33e3]
 xName = 'Frequency (kHz)' #'Time (ms)' #'Frequency (kHz)'
 yName = 'Magnitude (dB)' #'Magnitude' #'Magnitude (dB)'
