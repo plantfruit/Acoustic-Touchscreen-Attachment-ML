@@ -31,17 +31,24 @@ D2isoOut = 'Noise Isolation/D2_isoOut.txt'
 D1isoIn = 'Noise Isolation/D1_isoIn.txt'
 D1isoOut = 'Noise Isolation/D1_isoOut.txt'
 
+corners1 = 'Final Data/4corners_1.txt'
+corners2 = 'Final Data/4corners_2.txt'
+corners3 = 'Final Data/4corners_3.txt'
+
+
+
 # Parameters
-pressData = D1isoOut
+pressData = corners1
 unpressData = D1isoIn
-legends = ["Outside Sensor", "Inside Sensor"]
+legends = ["Top Left", "Top Right", "Bottom Left", "Bottom Right"]
+#legends = ["Outside Sensor", "Inside Sensor"]
 #legends = ["Pressed", "Unpressed"] # List to hold custom legends
-ylim = [30, 160] #[-60, 60] #[30, 120] #[-12e3, 8e3] # [-33e3, 33e3]
+ylim = [30, 120] #[-60, 60] #[30, 120] #[-12e3, 8e3] # [-33e3, 33e3]
 xName = 'Frequency (kHz)' #'Time (ms)' #'Frequency (kHz)'
 yName = 'Magnitude (dB)' #'Magnitude' #'Magnitude (dB)'
 freqWindow = [5, 21] # [2.5, 20] for 1D, [5 21] for 2D
 fftOrTime = True # True - FFT, False - Time domain
-plotPeaks = True
+plotPeaks = False
 singleFile = True
 
 labelFontsize = 32

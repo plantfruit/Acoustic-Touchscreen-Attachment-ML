@@ -83,9 +83,9 @@ chirpExp = 'Final Data/ChirpExp.txt'
 standard3x3_labels = 'Final Data/3x3_labels.txt'
 
 # SELECT FILENAMES FOR ANALYSIS
-fileName = g3x3_trimic1
+fileName = chirpExp
 
-labelFileName = g3x3_trimic1_labels
+labelFileName = standard3x3_labels
 
 testFileName = trimic1_3
  
@@ -100,7 +100,7 @@ total_rows = total_files * rows_per_file # Unused
 kFoldOrNot = True # True - Kfold cross validation, otherwise do a normal train-test split
 kFoldNum = 5
 internalSplit = True
-stringLabel = True # False - Numerical labels
+stringLabel = False # False - Numerical labels
 floatLabel = False 
 labelFontsize = 32
 textFontsize = 26 #26
