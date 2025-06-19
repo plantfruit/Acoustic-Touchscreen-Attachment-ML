@@ -8,7 +8,7 @@ regX = "2D_regX.txt" # x-axis soft press force, microphone 1
 regY = "2D_regY.txt" # y-axis hard press force, microphone 3
 
 # Parameters
-fileName = regX
+fileName = regY
 debugMode = False
 labelFontsize = 32
 tickFontsize = 26
@@ -74,7 +74,7 @@ plt.errorbar(plotLabels, plotPreds, yerr= plotErrors, fmt='o', color='b', alpha=
 plt.xlabel("Actual location (cm)", fontsize = labelFontsize)
 plt.ylabel("Predicted location (cm)", fontsize = labelFontsize)
 plt.yticks(fontsize = tickFontsize)
-plt.xticks(fontsize = tickFontsize)
+plt.xticks(ticks = plotLabels, fontsize = tickFontsize)
 text_str = f"R² = {R2str}\nRMSE = {RMSEstr}"
 ax = plt.gca()
 props = dict(boxstyle='round', facecolor='white', edgecolor='none', alpha=0.8)
@@ -82,4 +82,6 @@ ax.annotate(text_str, xy=(1, 0), xycoords='axes fraction',
             xytext=(-10, 10), textcoords='offset points',
             ha='right', va='bottom', fontsize=tickFontsize, bbox=props)
 #textBox = plt.text(1.5, 1, text_str, fontsize=tickFontsize, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
+
+plt.savefig(f'{fileName}' + '.pdf')
 plt.show()
