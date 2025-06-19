@@ -8,7 +8,7 @@ regX = "2D_regX.txt" # x-axis soft press force, microphone 1
 regY = "2D_regY.txt" # y-axis hard press force, microphone 3
 
 # Parameters
-fileName = regY
+fileName = regX
 debugMode = False
 labelFontsize = 32
 tickFontsize = 26
