@@ -60,7 +60,9 @@ for i in range(num_rows):
     plt.yticks(fontsize = textFontsize)
     plt.legend(legends, loc='upper right', fontsize = textFontsize, edgecolor='none', handlelength = 0.8)  # Adjust legend position
     #plt.grid(True)
-    
+
+
+pressData = pressData[0:len(pressData) - 4] # Remove .txt extension
 plt.savefig(f'{pressData}' + '.pdf')
 
 plt.show()
