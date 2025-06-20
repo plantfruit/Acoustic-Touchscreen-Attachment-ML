@@ -8,7 +8,7 @@ regX = "2D_regX.txt" # x-axis soft press force, microphone 1
 regY = "2D_regY.txt" # y-axis hard press force, microphone 3
 
 # Parameters
-fileName = regY
+fileName = regX
 debugMode = False
 labelFontsize = 32
 tickFontsize = 26
@@ -84,5 +84,6 @@ ax.annotate(text_str, xy=(1, 0), xycoords='axes fraction',
             ha='right', va='bottom', fontsize=tickFontsize, bbox=props)
 #textBox = plt.text(1.5, 1, text_str, fontsize=tickFontsize, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
 
+fileName = fileName[0:len(fileName) - 4] # Remove .txt extension
 plt.savefig(f'{fileName}' + '.pdf')
 plt.show()
