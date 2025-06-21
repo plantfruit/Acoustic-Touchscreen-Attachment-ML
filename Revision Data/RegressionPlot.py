@@ -8,7 +8,7 @@ regX = "2D_regX.txt" # x-axis soft press force, microphone 1
 regY = "2D_regY.txt" # y-axis hard press force, microphone 3
 
 # Parameters
-fileName = regX
+fileName = regY
 debugMode = False
 labelFontsize = 32
 tickFontsize = 26
@@ -81,7 +81,7 @@ ax = plt.gca()
 props = dict(boxstyle='round', facecolor='white', edgecolor='none', alpha=0.8)
 ax.annotate(text_str, xy=(1, 0), xycoords='axes fraction',
             xytext=(-10, 10), textcoords='offset points',
-            ha='right', va='bottom', fontsize=tickFontsize, bbox=props)
+            ha='right', va='bottom', fontsize= labelFontsize, bbox=props)
 #textBox = plt.text(1.5, 1, text_str, fontsize=tickFontsize, verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
 
 fileName = fileName[0:len(fileName) - 4] # Remove .txt extension
